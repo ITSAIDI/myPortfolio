@@ -1,10 +1,12 @@
+import Hero from "./components/hero"
 
+Hero
 
 function App() {
 
   return (
     <div>
-      <h1>Hello Nouredine</h1>
+      <Hero/>
     </div>
   )
 }
