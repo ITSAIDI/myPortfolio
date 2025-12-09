@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+
 @theme inline {
+
+  --color-primary: #1c1c22;
+  --color-green1: #00ff99;
+  --color-green2: #97fcd4;
+
+  --font-robotomono: "Roboto Mono", monospace;
+  --font-martianmono: "Martian Mono", monospace;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
