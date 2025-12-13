@@ -3,7 +3,7 @@ import Hero from "./components/Hero"
 function App() {
 
   return (
-    <div>
+    <div className="h-screen w-screen">
       <Hero/>
     </div>
   )
