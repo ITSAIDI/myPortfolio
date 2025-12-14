@@ -17,11 +17,11 @@ return (
       />
 
       
-      <div className="flex flex-col lg:flex-row justify-between">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-center">
         {/* Hero text */}
-        <div className="lg:order-1 order-2 lg:text-left mb-0 text-white font-martianmono font-semibold text-xl lg:text-3xl flex flex-col gap-0.5 lg:gap-2">
+        <div className="lg:order-1 order-2 lg:text-left text-white font-robotomono font-bold text-lg lg:text-2xl flex flex-col gap-0.5">
           <h1 >Hello  I'm </h1>
-          <span className="text-green1 font-martianmono font-bold text-2xl lg:text-4xl">Noureddine Saidi</span>
+          <span className="text-green1 font-martianmono font-bold text-xl lg:text-3xl">Noureddine Saidi</span>
           <span>I do</span>
           <TypingText
             text={["ML & DL", "GenAI", "Data Science", "Mobile & Web Dev"]}
