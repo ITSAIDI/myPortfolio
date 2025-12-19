@@ -12,7 +12,13 @@ export default function Hero() {
   }
   function contactBttClick()
   {
-    
+    const el = document.getElementById("contact");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    // Fallback: update the hash so navigation can attempt to jump to the section
+    window.location.hash = "contact";
   }
 return (
     <div className="w-full h-full relative p-7 bg-black1">
