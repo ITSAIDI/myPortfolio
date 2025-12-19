@@ -1,6 +1,7 @@
 'use client';
 
-import { ElementType, useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
+import type { ElementType } from 'react';
+import { useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
 import { gsap } from 'gsap';
 
 interface TypingTextProps {
@@ -100,7 +101,7 @@ const TypingText = ({
   useEffect(() => {
     if (!isVisible) return;
 
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     const currentText = textArray[currentTextIndex];
     const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
@@ -185,7 +186,7 @@ const TypingText = ({
         ref={cursorRef}
         className={`inline-block opacity-100 ${shouldHideCursor ? 'hidden' : ''} ${
           cursorCharacter === '|' 
-            ? `h-5 w-[1px] translate-y-1 bg-foreground ${cursorClassName}` 
+            ? `h-5 w-px translate-y-1 bg-foreground ${cursorClassName}` 
             : `ml-1 ${cursorClassName}`
         }`}
       >

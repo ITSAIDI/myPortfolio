@@ -6,11 +6,13 @@ import { motion,AnimatePresence } from "framer-motion"
 
 const ImageAnnimationIn1={
     initial : {opacity : 0},
-    animate : {opacity : 1 , transition : {delay : 1, duration : 0.4, ease : "easeIn"}},
+    animate : {opacity : 1},
+    transition : {delay : 1, duration : 0.4}
 }
 const ImageAnnimationIn2={
     initial : {opacity : 0},
-    animate : {opacity : 1 , transition : {delay : 1.4, duration : 0.4, ease : "easeIn"}},
+    animate : {opacity : 1},
+    transition : {delay : 1.4, duration : 0.4}
 }
 
 function useScreenWidth() {
@@ -41,7 +43,6 @@ function Photo() {
                             {...ImageAnnimationIn2}            
                             >
                                 <img 
-                                quality={100}
                                 className="object-cover w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] rounded-full"
                                 src={profileImage} alt="profile image" />
                             <motion.svg
