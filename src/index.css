@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -8,12 +8,12 @@
 
 @theme inline {
 
-  --color-primary: #1c1c22;
   --color-green1: #00ff99;
   --color-green2: #97fcd4;
+  --color-black1: #1c1c22;
 
-  --font-robotomono: "Roboto Mono", monospace;
-  --font-martianmono: "Martian Mono", monospace;
+  --font-josefinsans: "Josefin Sans", monospace;
+  --font-nunito: "Nunito", monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
