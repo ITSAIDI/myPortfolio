@@ -1,7 +1,7 @@
 import Button from "../components/Button"
 import Photo from "../components/Photo"
-import { Particles } from "../components/ui/particles"
-import TypingText from "../components/ui/typing-text"
+import { Particles } from "../components/ui/ParticlesBG"
+import TypingText from "../components/ui/TypingText"
 import Navbar from "./Navbar"
 
 // Nunito,Josefin Sans, Futura
