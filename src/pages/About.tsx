@@ -7,7 +7,7 @@ export default function About() {
  return (
     <div className="relative bg-black1 h-fit mt-0" id="about">
       {/* About text */}
-      <div className="relative z-10 text-white font-nunito flex flex-col gap-4 p-7">
+      <div className="relative z-10 text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px]">
         <h1 className="text-xl font-bold lg:text-4xl">From Model to Interface</h1>
         <p className="lg:text-lg max-w-[700px]">
           <span className="font-bold text-green1">Full Stack AI Engineer </span>
