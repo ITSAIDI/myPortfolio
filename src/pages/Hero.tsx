@@ -1,6 +1,6 @@
 import Button from "../components/Button"
 import Photo from "../components/Photo"
-import { Particles } from "../components/ui/ParticlesBG"
+import { Particles } from "../components/ui/BG1"
 import TypingText from "../components/ui/TypingText"
 import Navbar from "./Navbar"
 
@@ -22,7 +22,7 @@ export default function Hero() {
     }
   }
 return (
-    <div className="w-full h-full relative p-7 bg-black1">
+    <div className="w-full h-fit relative p-7 bg-black1">
       {/* Animated background */}
        <Particles
         className="absolute inset-0"

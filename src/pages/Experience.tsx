@@ -2,6 +2,7 @@
 
 export default function Experience() {
   return (
-    <div id = "experience">Experience</div>
+    <div 
+    id = "experience">Experience</div>
   )
 }
