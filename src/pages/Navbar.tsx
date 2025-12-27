@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+
 export default function Navbar() {
   const navs = [
     {name : "about",icon : "user"},
@@ -27,23 +28,33 @@ export default function Navbar() {
   };
 
   return (
-    <div className="flex flex-row  bg-green1 justify-center px-3 mx-auto w-fit rounded-full">
-      {navs.map((section,index)=>
-      (
-        <motion.button
-         key={index}
-         onClick={()=>{handleBttClick(section.name)}}
-         {...hoverAnimation}
-         className="text-black1 text-lg mb-1 lg:text-xl
-          hover:bg-black1
-          hover:text-green1 
-          rounded-b-full w-[60px]
-          transition-colors 
-          duration-300 ease-in-out
-          ">
-          <i className={`fa-solid fa-${section.icon} `}></i>
-        </motion.button>
-      ))}
-    </div>
+    <div className="z-50">
+      {/* Noureddine .  */}
+      <h1 className="fixed top-5 font-josefinsans text-white font-bold lg:text-xl">
+        <span className="text-green1">{"<"}</span>
+        Noureddine
+        <span className="text-green1">{"/>"}</span>
+      </h1>
+      {/* Navigation Tabs */}
+
+      <div className="fixed top-5 left-1/2 transform -translate-x-1/2 flex flex-row bg-green1 px-3 w-fit rounded-full">
+        {navs.map((section,index)=>
+        (
+          <motion.button
+          key={index}
+          onClick={()=>{handleBttClick(section.name)}}
+          {...hoverAnimation}
+          className="text-black1 text-lg mb-1 lg:text-xl
+            hover:bg-black1
+            hover:text-green1 
+            rounded-b-full w-[60px]
+            transition-colors 
+            duration-300 ease-in-out
+            ">
+            <i className={`fa-solid fa-${section.icon} `}></i>
+          </motion.button>
+        ))}
+      </div>
+  </div>
   )
 }

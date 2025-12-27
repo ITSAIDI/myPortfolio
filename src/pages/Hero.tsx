@@ -22,7 +22,7 @@ export default function Hero() {
     }
   }
 return (
-    <div className="w-full h-fit relative p-7 bg-black1">
+    <div className="w-full h-screen relative p-7 bg-black1">
       {/* Animated background */}
        <Particles
         className="absolute inset-0"
@@ -35,7 +35,7 @@ return (
 
       <Navbar />
 
-      <div className="flex flex-col lg:flex-row justify-between lg:items-center">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-10">
         <div className="flex flex-col lg:order-1 order-2 gap-6">
            {/* Hero text*/}
 
