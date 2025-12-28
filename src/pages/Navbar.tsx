@@ -30,14 +30,14 @@ export default function Navbar() {
   return (
     <div className="z-50">
       {/* Noureddine .  */}
-      <h1 className="fixed top-5 font-josefinsans text-white font-bold lg:text-xl">
+      <h1 className="hidden lg:block fixed top-5 font-josefinsans text-white font-bold lg:text-xl">
         <span className="text-green1">{"<"}</span>
         Noureddine
         <span className="text-green1">{"/>"}</span>
       </h1>
       {/* Navigation Tabs */}
 
-      <div className="fixed top-5 left-1/2 transform -translate-x-1/2 flex flex-row bg-green1 px-3 w-fit rounded-full">
+      <div className="fixed top-5 flex flex-row w-[250px] rounded-full left-1/2 transform -translate-x-1/2  bg-green1 lg:px-3 lg:w-fit  ">
         {navs.map((section,index)=>
         (
           <motion.button

@@ -15,7 +15,7 @@ const ImageAnnimationIn2={
     transition : {delay : 1.4, duration : 0.4}
 }
 
-function useScreenWidth() {
+function useScreenWidth(small:number,large:number) {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -23,14 +23,15 @@ function useScreenWidth() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-   if (width < 1024) return 100
-  return 150;
+   if (width < 1024) return small/2
+  return large/2;
 }
 
 
 function Photo() {
-    const dimension = useScreenWidth();
-    
+    const imageDimLargeScreen = 400
+    const imageDimSmallScreen = 200
+    const dimension = useScreenWidth(imageDimSmallScreen,imageDimLargeScreen);
     return (        
  
     <AnimatePresence>
@@ -43,10 +44,11 @@ function Photo() {
                             {...ImageAnnimationIn2}            
                             >
                                 <img 
-                                className="object-cover w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] rounded-full"
+                                className={`object-cover w-[${imageDimSmallScreen}px] h-[${imageDimSmallScreen}px] lg:w-[${imageDimLargeScreen}px] lg:h-[${imageDimLargeScreen}px] rounded-full`}
+
                                 src={profileImage} alt="profile image" />
                             <motion.svg
-                            className={"absolute h-[200px] w-[200px] lg:h-[300px] lg:w-[300px] "}>
+                            className={`absolute w-[${imageDimSmallScreen}px] h-[${imageDimSmallScreen}px] lg:w-[${imageDimLargeScreen}px] lg:h-[${imageDimLargeScreen}px]`}>
                                     <motion.circle
                                     cx={dimension} cy={dimension} r={dimension}
                                     fill="transparent"

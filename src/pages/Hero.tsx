@@ -4,7 +4,7 @@ import { Particles } from "../components/ui/BG1"
 import TypingText from "../components/ui/TypingText"
 import Navbar from "./Navbar"
 
-// Nunito,Josefin Sans, Futura
+// Nunito,Josefin Sans
 export default function Hero() {
 
   function resumeBttClick()
@@ -22,7 +22,7 @@ export default function Hero() {
     }
   }
 return (
-    <div className="w-full h-screen relative p-7 bg-black1">
+    <div className="w-full h-screen min-h-fit relative p-7 bg-black1">
       {/* Animated background */}
        <Particles
         className="absolute inset-0"
@@ -40,14 +40,14 @@ return (
            {/* Hero text*/}
 
             <div className="lg:text-left text-white font-josefinsans flex flex-col gap-4">
-              <h1 className="text-xl font-bold text-green1 lg:text-4xl">When AI Meets Engineering</h1>
-              <p className="lg:text-lg max-w-[700px]">
+              <h1 className="text-xl font-bold text-green1 lg:text-5xl mt-5">When AI Meets Engineering</h1>
+              <p className="lg:text-xl max-w-[700px]">
                 I design and deploy intelligent solutions that blend advanced machine learning with elegant, 
                 functional interfaces. From data pipelines to production-ready apps.
               </p>
 
               <TypingText
-                className="lg:text-2xl font-nunito font-bold"
+                className="lg:text-3xl font-nunito font-bold"
                 text={["MLOps", "LLMOps", "Data Science", "Mobile & Web Dev"]}
                 typingSpeed={150}
                 initialDelay={50}
@@ -58,12 +58,22 @@ return (
                 textColors={['#ffff']}
               />
            </div>
+
            {/* Call_To_Action */}
 
-           <div className="">
+           <div className="flex flex-row gap-3 justify-center lg:justify-start">
             {/* Resume */} <Button text="Resume" handleClick={resumeBttClick}  iconClassname="fa-solid fa-arrow-up-right-from-square text-black1" textClassname="text-black1" buttonClassname="bg-green1 hover:bg-green2"/>
             {/* Contact*/} <Button text="Contact" handleClick={contactBttClick} buttonClassname="bg-transparent hover:text-green2"/>
            </div>
+
+           {/* Location, Availability*/}
+           <div className="flex flex-col gap-2 mt-5 font-nunito font-bold text-white text-sm">
+             <h1><i className="fa-solid fa-location-dot text-green1"></i> Meknes, Morocco <span className="text-green2">(open to relocation)</span></h1>
+             <h1><i className="fa-solid fa-business-time text-green1"></i> Available for full-time</h1>
+           </div>
+
+           {/* Links */}
+
         </div>
         
 

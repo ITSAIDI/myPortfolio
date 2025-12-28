@@ -15,7 +15,7 @@ export default function Button(props : ButtonInput) {
             `
             group
             text-green1
-            px-3 py-0
+            px-3 lg:py-1
             rounded-full
             hover:border-green2 
             transition-all duration-500 ease-in-out
@@ -27,7 +27,7 @@ export default function Button(props : ButtonInput) {
             onClick={props.handleClick}
             >  
             <span
-            className={`font-nunito font-extrabold ${props.textClassname ?? ''}`}
+            className={`font-nunito font-extrabold lg:text-lg ${props.textClassname ?? ''}`}
             >
             {props.text} </span>
             <i className={`
