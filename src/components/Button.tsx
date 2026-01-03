@@ -16,11 +16,11 @@ export default function Button(props : ButtonInput) {
             group
             text-green1
             px-3 lg:py-1
-            rounded-full
+            rounded-md
             hover:border-green2 
             transition-all duration-500 ease-in-out
             cursor-pointer 
-            border-2 border-green1
+           
             ${props.buttonClassname ?? ''}
             `
             }

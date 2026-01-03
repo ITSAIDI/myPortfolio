@@ -3,9 +3,38 @@ import Photo from "../components/Photo"
 import { Particles } from "../components/ui/BG1"
 import TypingText from "../components/ui/TypingText"
 import Navbar from "./Navbar"
+import { FiGithub } from "react-icons/fi";
+import { LuLinkedin } from "react-icons/lu";
+import { FaRegEnvelope } from "react-icons/fa";
+import { SiHuggingface } from "react-icons/si";
+import { IoLocationOutline } from "react-icons/io5";
+import { MdOutlineWorkHistory } from "react-icons/md";
 
 // Nunito,Josefin Sans
 export default function Hero() {
+  const SocialLinks = [
+
+    {
+        icon : FiGithub,
+        link : "https://github.com/ITSAIDI"
+        
+    },
+    {
+        icon : SiHuggingface,
+        link : "https://huggingface.co/Noureddinesa"
+        
+    },
+    {
+        icon : LuLinkedin,
+        link : "https://www.linkedin.com/in/noureddine-saidi-42ba3a247/"
+        
+    },
+    {
+        icon : FaRegEnvelope,
+        link : "mailto:noureddinesaidi111@gmail.com"
+        
+    }
+  ]
 
   function resumeBttClick()
   {
@@ -22,7 +51,9 @@ export default function Hero() {
     }
   }
 return (
-    <div className="w-full h-screen min-h-fit relative p-7 bg-black1">
+    <div 
+    id="hero"
+    className="w-full h-screen min-h-fit relative p-7 bg-black1">
       {/* Animated background */}
        <Particles
         className="absolute inset-0"
@@ -63,16 +94,42 @@ return (
 
            <div className="flex flex-row gap-3 justify-center lg:justify-start">
             {/* Resume */} <Button text="Resume" handleClick={resumeBttClick}  iconClassname="fa-solid fa-arrow-up-right-from-square text-black1" textClassname="text-black1" buttonClassname="bg-green1 hover:bg-green2"/>
-            {/* Contact*/} <Button text="Contact" handleClick={contactBttClick} buttonClassname="bg-transparent hover:text-green2"/>
+            {/* Contact*/} <Button text="Contact" handleClick={contactBttClick} buttonClassname="bg-transparent hover:text-green2 border-1 border-green1"/>
            </div>
 
            {/* Location, Availability*/}
-           <div className="flex flex-col gap-2 mt-5 font-nunito font-bold text-white text-sm">
-             <h1><i className="fa-solid fa-location-dot text-green1"></i> Meknes, Morocco <span className="text-green2">(open to relocation)</span></h1>
-             <h1><i className="fa-solid fa-business-time text-green1"></i> Available for full-time</h1>
+           <div className="flex flex-col gap-2 mt-5 font-nunito font-bold text-white text-md">
+             <div className="flex flex-row gap-1 justify-baseline">
+              <IoLocationOutline  className="text-green1 text-xl"/>
+              <h1>Meknes, Morocco <span className="text-green2">(open to relocation)</span></h1>
+             </div>
+
+             <div className="flex flex-row gap-1 justify-baseline">
+              <MdOutlineWorkHistory  className="text-green1 text-xl"/>
+              <h1>Available for full-time</h1>
+             </div>             
+             
            </div>
 
            {/* Links */}
+            <div className="flex flex-row gap-4">
+              {
+                SocialLinks.map((item, index) => 
+                (
+                    <a 
+                    href={item.link} 
+                    key={index}
+                    className="text-2xl text-gray-500 border rounded-md p-2 border-gray-600 hover:border-green1 hover:text-green1 
+                    transition-colors duration-400" 
+                    target="_blank"
+                    >
+                     <item.icon/>
+                    </a>
+                        
+                    ))
+                }       
+            </div>
+
 
         </div>
         

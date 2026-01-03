@@ -29,7 +29,7 @@ function useScreenWidth(small:number,large:number) {
 
 
 function Photo() {
-    const imageDimLargeScreen = 400
+    const imageDimLargeScreen = 500
     const imageDimSmallScreen = 200
     const dimension = useScreenWidth(imageDimSmallScreen,imageDimLargeScreen);
     return (        
@@ -44,11 +44,12 @@ function Photo() {
                             {...ImageAnnimationIn2}            
                             >
                                 <img 
-                                className={`object-cover w-[${imageDimSmallScreen}px] h-[${imageDimSmallScreen}px] lg:w-[${imageDimLargeScreen}px] lg:h-[${imageDimLargeScreen}px] rounded-full`}
-
+                                className="object-cover rounded-full"
+                                style={{width: `${dimension * 2}px`, height: `${dimension * 2}px`}}
                                 src={profileImage} alt="profile image" />
                             <motion.svg
-                            className={`absolute w-[${imageDimSmallScreen}px] h-[${imageDimSmallScreen}px] lg:w-[${imageDimLargeScreen}px] lg:h-[${imageDimLargeScreen}px]`}>
+                            className="absolute"
+                            style={{width: `${dimension * 2}px`, height: `${dimension * 2}px`}}>
                                     <motion.circle
                                     cx={dimension} cy={dimension} r={dimension}
                                     fill="transparent"
