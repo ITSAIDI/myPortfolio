@@ -11,7 +11,7 @@ export default function About() {
  return (
     <div className="relative bg-black1 h-fit" id="about">
 
-      <div className="relative z-10 text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px]">
+      <div className="relative z-10 text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px] pointer-events-none">
         {/* Badge */}
         <div className="border border-gray-600 w-fit rounded-full px-3 py-0.5 text-gray-400 
         flex flex-row gap-1 items-center font-bold ">

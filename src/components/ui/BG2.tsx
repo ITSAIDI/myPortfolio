@@ -70,6 +70,7 @@ export function InteractiveGridPattern({
             key={index}
             x={x}
             y={y}
+            rx={10}
             tabIndex={0} 
             width={width}
             height={height}
