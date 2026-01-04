@@ -1,5 +1,5 @@
 import { InteractiveGridPattern } from "@/components/ui/BG2"
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { BiFace } from "react-icons/bi";
 
 
@@ -24,6 +24,7 @@ export default function About() {
         {...fadInAnimation}
         transition={{duration: 1,delay:0.5}}
         className="text-xl font-bold lg:text-4xl">From Data to UIs</motion.h1>
+        
         <motion.p 
         {...fadInAnimation}
         transition={{duration: 1,delay:0.8}}
