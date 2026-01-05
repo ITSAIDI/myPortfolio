@@ -1,16 +1,26 @@
+import StatBox from "@/components/StatBox";
 import { InteractiveGridPattern } from "@/components/ui/BG2"
 import { motion } from "framer-motion";
 import { BiFace } from "react-icons/bi";
+import { MdWorkspacePremium } from "react-icons/md";
+import { VscTools } from "react-icons/vsc";
+import { PiCertificateBold } from "react-icons/pi";
+import { FaCodeBranch } from "react-icons/fa";
+import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 
 
 export default function About() {
   const fadInAnimation = {
     initial : {opacity : 0},
     whileInView : {opacity : 1},
+    viewport :{ once: true }
   }
+  
+// pointer-events-none : To enable the hovering of the background
+// Tools && Technologies : React, Typescript, Python, SQL, PosgreSQL, Github, HiggingFace, FastAPI, Flask, ReadTheDocs, LangChain. Langraph, Pythorch, Docker, MCP, Pytest, scikit-learn
  return (
-    <div className="relative bg-black1 h-fit" id="about">
-
+    <div className="relative bg-black1 h-fit flex lg:flex-row" id="about">
+       {/* Text section */}
       <div className="relative z-10 text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px] pointer-events-none">
         {/* Badge */}
         <div className="border border-gray-600 w-fit rounded-full px-3 py-0.5 text-gray-400 
@@ -34,6 +44,18 @@ export default function About() {
           I specialize in designing intelligent systems that combine robust AI models with elegant, intuitive user interfaces.
         </motion.p>
       </div>
+
+      {/* Stats section */}
+      <motion.div
+       {...fadInAnimation}
+       transition={{duration: 1,delay:1}}
+       className="flex flex-wrap items-center justify-center gap-5 lg:w-[500px]">
+        <StatBox icon={FaCodeBranch} text="Code Commits 2025" value={582}/>
+        <StatBox icon={VscTools} text="Tools && Technologies" value={17}/>
+        <StatBox icon={PiCertificateBold} text="Certifications" value={8}/>
+        <StatBox icon={MdWorkspacePremium} text="End To End Projects" value={8}/>
+        <StatBox icon={HiOutlineBuildingStorefront} text="Experience years" value={1}/>
+      </motion.div>
     
       <InteractiveGridPattern 
         className="absolute inset-0 h-full w-full"

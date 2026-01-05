@@ -1,90 +1,90 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-/**
- * InteractiveGridPattern is a component that renders a grid pattern with interactive squares.
- *
- * @param width - The width of each square.
- * @param height - The height of each square.
- * @param squares - The number of squares in the grid. The first element is the number of horizontal squares, and the second element is the number of vertical squares.
- * @param className - The class name of the grid.
- * @param squaresClassName - The class name of the squares.
- */
+
 interface InteractiveGridPatternProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
-  squares?: [number, number]; // [horizontal, vertical]
   className?: string;
   squaresClassName?: string;
 }
-/**
- * The InteractiveGridPattern component.
- *
- * @see InteractiveGridPatternProps for the props interface.
- * @returns A React component.
- */
+
 export function InteractiveGridPattern({
-  width = 10,
-  height = 10,
-  squares = [2, 2],
+  width = 30,
+  height = 30,
   className,
   squaresClassName,
   ...props
 }: InteractiveGridPatternProps) {
+  const [cols, setCols] = useState(0);
+  const [rows, setRows] = useState(0);
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
-  const [hoveredSquare, setHoveredSquare] = useState<number | null>(null);
-  const [horizontal, setHorizontal] = useState<number>(Math.floor(window.innerWidth/width));
-  const [vertical, setVertical] = useState<number>(Math.floor(window.innerHeight/height));
-  
   useEffect(() => {
-    const handleResize = () => {
-
-      setHorizontal(Math.floor(window.innerWidth/width))
-      setVertical(Math.floor(window.innerHeight/height))
-
-      //console.log(`Screen Width: ${newWidth}px, Screen Height: ${newHeight}px`);
+    const resize = () => {
+      setCols(Math.ceil(window.innerWidth / width));
+      setRows(Math.ceil(window.innerHeight / height));
     };
-
-    window.addEventListener("resize", handleResize);
-    
-    // Log initial screen size
-    //console.log(`Screen Width: ${screenWidth}px, Screen Height: ${screenHeight}px`);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    resize();
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
+  }, [width, height]);
 
   return (
     <svg
-      width={width * horizontal}
-      height={height * vertical}
-      className={cn(
-        "absolute inset-0 h-full w-full",
-        className,
-      )}
-      {...(props as any)}
+      width={cols * width}
+      height={rows * height}
+      className={cn("absolute inset-0 w-full h-full", className)}
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        setMouse({
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      }}
+      {...props}
     >
-      {Array.from({ length: horizontal * vertical }).map((_, index) => {
-        const x = (index % horizontal) * width;
-        const y = Math.floor(index / horizontal) * height;
-        return (
+      {/* MASK */}
+      <defs>
+        <radialGradient
+          id="hover-gradient"
+          cx={mouse.x}
+          cy={mouse.y}
+          r="180"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0%" stopColor="white" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="white" stopOpacity="0" />
+        </radialGradient>
+
+        <mask id="hover-mask">
           <rect
-            key={index}
-            x={x}
-            y={y}
-            rx={10}
-            tabIndex={0} 
-            width={width}
-            height={height}
-            className={cn(
-              "transition-colors duration-0  not-[&:hover]:duration-1000",
-              hoveredSquare === index ? "fill-green2" : "fill-transparent",
-              squaresClassName,
-            )}
-            onMouseEnter={() => setHoveredSquare(index)}
-            onMouseLeave={() => setHoveredSquare(null)}
+            width="100%"
+            height="100%"
+            fill="url(#hover-gradient)"
           />
-        );
-      })}
+        </mask>
+      </defs>
+
+      {/* GRID */}
+      <g mask="url(#hover-mask)">
+        {Array.from({ length: cols * rows }).map((_, i) => {
+          const x = (i % cols) * width;
+          const y = Math.floor(i / cols) * height;
+          return (
+            <rect
+              key={i}
+              x={x}
+              y={y}
+              width={width}
+              height={height}
+              className={cn(
+                "fill-black1 stroke-green1 stroke-[0.5px]",
+                squaresClassName
+              )}
+            />
+          );
+        })}
+      </g>
     </svg>
   );
 }
-export type { InteractiveGridPatternProps };
