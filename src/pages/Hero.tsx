@@ -1,6 +1,6 @@
 import Button from "../components/Button"
 import Photo from "../components/Photo"
-import { Particles } from "../components/ui/BG1"
+import { BG1 } from "../components/ui/BG1"
 import TypingText from "../components/ui/TypingText"
 import Navbar from "./Navbar"
 import { FiGithub } from "react-icons/fi";
@@ -55,7 +55,7 @@ return (
     id="hero"
     className="w-full h-screen min-h-fit relative p-7 bg-black1">
       {/* Animated background */}
-       <Particles
+       <BG1
         className="absolute inset-0"
         quantity={100}
         ease={80}

@@ -1,5 +1,4 @@
 import StatBox from "@/components/StatBox";
-import { InteractiveGridPattern } from "@/components/ui/BG2"
 import { motion } from "framer-motion";
 import { BiFace } from "react-icons/bi";
 import { MdWorkspacePremium } from "react-icons/md";
@@ -7,6 +6,7 @@ import { VscTools } from "react-icons/vsc";
 import { PiCertificateBold } from "react-icons/pi";
 import { FaCodeBranch } from "react-icons/fa";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
+import Badge from "@/components/Badge";
 
 
 export default function About() {
@@ -19,15 +19,12 @@ export default function About() {
 // pointer-events-none : To enable the hovering of the background
 // Tools && Technologies : React, Typescript, Python, SQL, PosgreSQL, Github, HiggingFace, FastAPI, Flask, ReadTheDocs, LangChain. Langraph, Pythorch, Docker, MCP, Pytest, scikit-learn
  return (
-    <div className="relative bg-black1 h-fit flex lg:flex-row" id="about">
+    <div className="flex lg:flex-row" id="about">
+
        {/* Text section */}
-      <div className="relative z-10 text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px] pointer-events-none">
+      <div className="text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px]">
         {/* Badge */}
-        <div className="border border-gray-600 w-fit rounded-full px-3 py-0.5 text-gray-400 
-        flex flex-row gap-1 items-center font-bold ">
-           <BiFace className="text-green1 text-xl"/>
-           <h1>About</h1>
-        </div>
+        <Badge icon={BiFace} title="About"/>
 
         {/* About text */}
         <motion.h1 
@@ -57,9 +54,6 @@ export default function About() {
         <StatBox icon={HiOutlineBuildingStorefront} text="Experience years" value={1}/>
       </motion.div>
     
-      <InteractiveGridPattern 
-        className="absolute inset-0 h-full w-full"
-      />
     </div>
   );
 }

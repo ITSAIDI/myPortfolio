@@ -59,7 +59,7 @@ function hexToRgb(hex: string): number[] {
   return [red, green, blue];
 }
 
-export const Particles: React.FC<ParticlesProps> = ({
+export const BG1: React.FC<ParticlesProps> = ({
   className = "",
   quantity = 100,
   staticity = 50,
@@ -282,4 +282,3 @@ export const Particles: React.FC<ParticlesProps> = ({
   );
 };
 
-Particles.displayName = "Particles";

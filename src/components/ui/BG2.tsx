@@ -8,7 +8,7 @@ interface InteractiveGridPatternProps extends React.SVGProps<SVGSVGElement> {
   squaresClassName?: string;
 }
 
-export function InteractiveGridPattern({
+export function BG2 ({
   width = 30,
   height = 30,
   className,
