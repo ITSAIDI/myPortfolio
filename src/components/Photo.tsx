@@ -15,7 +15,7 @@ const ImageAnnimationIn2={
     transition : {delay : 1.4, duration : 0.4}
 }
 
-function useScreenWidth(small:number,large:number) {
+function useScreenWidth() {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -28,9 +28,8 @@ function useScreenWidth(small:number,large:number) {
 
 
 function Photo() {
-    const imageDimLargeScreen = 500
-    const imageDimSmallScreen = 200
-    const dimension = useScreenWidth(imageDimSmallScreen,imageDimLargeScreen);
+
+    const dimension = useScreenWidth();
     return (        
  
     <AnimatePresence>
