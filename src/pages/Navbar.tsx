@@ -18,7 +18,7 @@ export default function Navbar() {
 
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-      window.location.hash = sectionName;
+      // window.location.hash = sectionName;
     }
   }
   const hoverAnimation = {
@@ -32,7 +32,7 @@ export default function Navbar() {
       {/* Noureddine .  */}
       <button 
       onClick={()=>{handleBttClick("hero")}}
-      className="hidden lg:block fixed top-5 font-josefinsans text-white font-bold lg:text-xl rounded-md backdrop-blur-lg px-1 py-1">
+      className="hidden lg:block fixed top-5 font-josefinsans text-white font-bold lg:text-xl rounded-md backdrop-blur-lg px-1 py-1 ml-2">
         <span className="text-green1">{"<"}</span>
         Noureddine
         <span className="text-green1">{"/>"}</span>

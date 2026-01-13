@@ -2,7 +2,6 @@ import Button from "../components/Button"
 import Photo from "../components/Photo"
 import { BG1 } from "../components/ui/BG1"
 import TypingText from "../components/ui/TypingText"
-import Navbar from "./Navbar"
 import { FiGithub } from "react-icons/fi";
 import { LuLinkedin } from "react-icons/lu";
 import { FaRegEnvelope } from "react-icons/fa";
@@ -63,8 +62,6 @@ return (
         color="#00ff99"
         size={0.8}
       />
-
-      <Navbar />
 
       <div className="flex flex-col lg:flex-row justify-between lg:items-center mt-10">
         <div className="flex flex-col lg:order-1 order-2 gap-6">
