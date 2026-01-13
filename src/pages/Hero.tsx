@@ -98,14 +98,14 @@ return (
            </div>
 
            {/* Location, Availability*/}
-           <div className="flex flex-col gap-2 mt-5 font-nunito font-bold text-white text-md">
+           <div className="flex flex-col gap-2 mt-5 font-josefinsans font-bold text-white lg:text-md">
              <div className="flex flex-row gap-1 justify-baseline">
-              <IoLocationOutline  className="text-green1 text-xl"/>
+              <IoLocationOutline  className="text-green1 lg:text-xl"/>
               <h1>Meknes, Morocco <span className="text-green2">(open to relocation)</span></h1>
              </div>
 
              <div className="flex flex-row gap-1 justify-baseline">
-              <MdOutlineWorkHistory  className="text-green1 text-xl"/>
+              <MdOutlineWorkHistory  className="text-green1 lg:text-xl"/>
               <h1>Available for full-time</h1>
              </div>             
              

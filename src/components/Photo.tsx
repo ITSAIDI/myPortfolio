@@ -23,8 +23,7 @@ function useScreenWidth(small:number,large:number) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-   if (width < 1024) return small/2
-  return large/2;
+   return width/5
 }
 
 
@@ -49,6 +48,7 @@ function Photo() {
                                 src={profileImage} alt="profile image" />
                             <motion.svg
                             className="absolute"
+                            viewBox={`0 0 ${dimension * 2} ${dimension * 2}`}
                             style={{width: `${dimension * 2}px`, height: `${dimension * 2}px`}}>
                                     <motion.circle
                                     cx={dimension} cy={dimension} r={dimension}

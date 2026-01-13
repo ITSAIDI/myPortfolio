@@ -19,10 +19,10 @@ export default function About() {
 // pointer-events-none : To enable the hovering of the background
 // Tools && Technologies : React, Typescript, Python, SQL, PosgreSQL, Github, HiggingFace, FastAPI, Flask, ReadTheDocs, LangChain. Langraph, Pythorch, Docker, MCP, Pytest, scikit-learn
  return (
-    <div className="flex lg:flex-row" id="about">
+    <div className="flex flex-wrap lg:flex-row lg:flex-nowrap" id="about">
 
        {/* Text section */}
-      <div className="text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px]">
+      <div className="text-white font-nunito flex flex-col gap-4 p-7 max-w-[700px] min-w-[300px]">
         {/* Badge */}
         <Badge icon={BiFace} title="About"/>
 
@@ -46,7 +46,7 @@ export default function About() {
       <motion.div
        {...fadInAnimation}
        transition={{duration: 1,delay:1}}
-       className="flex flex-wrap items-center justify-center gap-5 lg:w-[500px]">
+       className="flex flex-wrap items-center justify-center gap-5 mx-auto">
         <StatBox icon={FaCodeBranch} text="Code Commits 2025" value={582}/>
         <StatBox icon={VscTools} text="Tools && Technologies" value={17}/>
         <StatBox icon={PiCertificateBold} text="Certifications" value={8}/>
